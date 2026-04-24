@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posts UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="app-shell">
+  <section class="hero card">
+    <div class="hero-copy">
+      <p class="eyebrow">Post & Comment System</p>
+      <h1>Focused, polished discussion UI.</h1>
+      <p class="hero-text">
+        Create posts, browse updates, and manage comments in a clean workspace built with your palette.
+      </p>
+    </div>
+    <div class="hero-badges" aria-label="UI highlights">
+      <span>Fast actions</span>
+      <span>Readable cards</span>
+      <span>Responsive layout</span>
+    </div>
+  </section>
+
+  <section class="dashboard">
+    <div class="card panel panel-primary">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">Create</p>
+          <h2>Create Post</h2>
+        </div>
+      </div>
+      <input id="postContent" placeholder="Share an update, idea, or announcement" />
+      <button onclick="createPost()">Create Post</button>
+    </div>
+
+    <div class="card panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">Browse</p>
+          <h2>All Posts</h2>
+        </div>
+      </div>
+      <button onclick="loadPosts()">Load Posts</button>
+      <ul id="posts" class="stack-list"></ul>
+    </div>
+  </section>
+
+  <section class="card panel comments-panel">
+    <div class="panel-heading">
+      <div>
+        <p class="eyebrow">Engage</p>
+        <h2>Comments</h2>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <input id="commentPostId" placeholder="Post ID" />
+      <input id="commentContent" placeholder="Write a comment" />
+      <select id="authorType">
+        <option value="USER">USER</option>
+        <option value="BOT">BOT</option>
+      </select>
+      <button onclick="addComment()">Add Comment</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="panel-heading compact">
+      <div>
+        <p class="eyebrow">View</p>
+        <h3>Load Comments</h3>
+      </div>
+    </div>
+    <div class="form-inline">
+      <input id="viewPostId" placeholder="Post ID" />
+      <button onclick="loadComments()">Load Comments</button>
+    </div>
+    <ul id="comments" class="stack-list comments-list"></ul>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
